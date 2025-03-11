@@ -10,4 +10,20 @@ class Images {
   static const String groupfooter = "assets/images/Group.png";
   static const String registerImage = "assets/images/register.png";
   static const String verifiedtick = "assets/images/verified.png";
+  static const String freshImage = "assets/images/fresh.png";
+  static const String car = "assets/images/car.gif";
+  static const String flight = "assets/images/flight.gif";
+  static const String rocket = "assets/images/rocket.gif";
+  static const String datesvg = "assets/images/date.svg";
+  static const String clothessvg = "assets/images/clothes.svg";
+  static const String locationsvg = "assets/images/location.svg";
+  static const String pencil = "assets/images/pencil.svg";
+  static const String threedot = "assets/images/threedot.svg";
+  static const String discountorange = "assets/images/discountorange.png";
+  static const String discountpurple = "assets/images/discountpurpule.png";
+  static const String whataapimage = "assets/images/whatsaaphome2.jpg";
+  static const String orderid = "assets/images/order_id.png";
+  static const String mapImage = "assets/images/map_image.png";
+  static const String building = "assets/images/building.png";
+  static const String home = "assets/images/home.png";
 }

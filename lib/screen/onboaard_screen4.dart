@@ -55,9 +55,12 @@ class _OnboardingScreen4State extends State<OnboardingScreen4> {
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
 
-            Padding(
-              padding: EdgeInsets.all(30),
-              child: Image.asset(Images.boardingBody4),
+            SizedBox(height: 30),
+            Container(
+              height: 300,
+              width: MediaQuery.of(context).size.width * .80,
+
+              child: Image.asset(fit: BoxFit.cover, Images.boardingBody4),
             ),
           ],
         ),

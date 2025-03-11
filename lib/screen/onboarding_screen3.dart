@@ -51,10 +51,12 @@ class _OnboardingScreen3State extends State<OnboardingScreen3> {
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             Text("cleaning", style: TextStyle(fontWeight: FontWeight.bold)),
+            SizedBox(height: 30),
+            Container(
+              height: 300,
+              width: MediaQuery.of(context).size.width * .80,
 
-            Padding(
-              padding: EdgeInsets.all(0),
-              child: Image.asset(Images.boardingBody3),
+              child: Image.asset(fit: BoxFit.cover, Images.boardingBody3),
             ),
           ],
         ),

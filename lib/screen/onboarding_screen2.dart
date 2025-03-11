@@ -52,10 +52,12 @@ class _OnboardingScreen2State extends State<OnboardingScreen2> {
               "Laundry  services  at your  fingertips",
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
+            SizedBox(height: 30),
+            Container(
+              height: 300,
+              width: MediaQuery.of(context).size.width * .80,
 
-            Padding(
-              padding: EdgeInsets.all(30),
-              child: Image.asset(Images.boardingBody2),
+              child: Image.asset(fit: BoxFit.cover, Images.boardingBody2),
             ),
           ],
         ),

@@ -4,7 +4,6 @@ import 'package:service/screen/onboaard_screen4.dart';
 import 'package:service/screen/onboarad_screen5.dart';
 import 'package:service/screen/onboarding_screen2.dart';
 import 'package:service/screen/onboarding_screen3.dart';
-import 'package:service/utils/image.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardingScreen1 extends StatefulWidget {
@@ -66,11 +65,7 @@ class _OnboardingScreen1State extends State<OnboardingScreen1> {
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text("Get Started"), 
-                      Icon(Icons.arrow_forward)
-                      
-                      ],
+                    children: [Text("Get Started"), Icon(Icons.arrow_forward)],
                   ),
                 ),
               ),

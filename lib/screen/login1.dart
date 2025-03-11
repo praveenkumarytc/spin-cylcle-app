@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:service/custome_widgets/app_button.dart';
 import 'package:service/screen/register.dart';
 
 import 'package:service/utils/image.dart';
@@ -11,6 +12,8 @@ class LoginPage1 extends StatefulWidget {
 }
 
 class _LoginPage1State extends State<LoginPage1> {
+  TextEditingController mobileOtpController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -19,42 +22,56 @@ class _LoginPage1State extends State<LoginPage1> {
           FocusScope.of(context).unfocus();
         },
         child: Scaffold(
-          body: Stack(
-            children: [
-              Positioned(right: 0, child: Image.asset(Images.loginimage)),
-              Positioned(
-                top: 60,
-                left: 30,
-                child: Image.asset(Images.unionimage),
-              ),
-              Positioned(
-                top: 130,
-                left: 30,
-                child: Text(
-                  "Welcome",
-                  style: TextStyle(
-                    color: Color(0xff6E3667),
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
+          body: SingleChildScrollView(
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 370,
+                  child: Stack(
+                    children: [
+                      Positioned(
+                        right: 0,
+                        child: Image.asset(Images.loginimage),
+                      ),
+                      Positioned(
+                        top: 60,
+                        left: 30,
+                        child: Image.asset(Images.unionimage),
+                      ),
+                      Positioned(
+                        top: 130,
+                        left: 30,
+                        child: Text(
+                          "Welcome",
+                          style: TextStyle(
+                            color: Color(0xff6E3667),
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      Positioned(top: 180, left: 30, child: Text("Guest!")),
+                      Positioned(
+                        top: 213,
+                        left: 30,
+                        child: Text(
+                          "Login to Your",
+                          style: TextStyle(fontSize: 25),
+                        ),
+                      ),
+                      Positioned(
+                        top: 240,
+                        left: 30,
+                        child: Text("account", style: TextStyle(fontSize: 25)),
+                      ),
+                    ],
                   ),
                 ),
-              ),
-              Positioned(top: 180, left: 30, child: Text("Guest!")),
-              Positioned(
-                top: 213,
-                left: 30,
-                child: Text("Login to Your", style: TextStyle(fontSize: 25)),
-              ),
-              Positioned(
-                top: 240,
-                left: 30,
-                child: Text("account", style: TextStyle(fontSize: 25)),
-              ),
-              Positioned(
-                top: 350,
-                left: 30,
-                child: Row(
+
+                Row(
                   children: [
+                    SizedBox(width: 30),
+
                     Container(
                       height: 47,
                       width: MediaQuery.of(context).size.width * .2,
@@ -64,43 +81,44 @@ class _LoginPage1State extends State<LoginPage1> {
                       ),
                       child: Row(
                         children: [
-                          SizedBox(width: 4),
-                          Image.asset(Images.flagindia),
-                          SizedBox(width: 4),
-                          Text("+91", style: TextStyle(color: Colors.grey)),
                           SizedBox(width: 2),
+                          Image.asset(Images.flagindia),
+
+                          Text("+91", style: TextStyle(color: Colors.grey)),
+
                           Icon(Icons.arrow_downward, color: Colors.grey),
                         ],
                       ),
                     ),
+                    SizedBox(width: 10),
+                    Padding(
+                      padding: EdgeInsets.only(right: 18),
+                      child: Container(
+                        height: 47,
+                        width: MediaQuery.of(context).size.width * .62,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.grey),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: TextFormField(
+                          controller: mobileOtpController,
+                          keyboardType: TextInputType.phone,
+
+                          decoration: InputDecoration(
+                            focusColor: Colors.green,
+                            hintText: "enter your mobile number",
+                            hintStyle: TextStyle(color: Colors.grey),
+                            border: OutlineInputBorder(
+                              borderSide: BorderSide.none,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
-              ),
-              Positioned(
-                top: 350,
-                left: 120,
-                child: Container(
-                  height: 47,
-                  width: MediaQuery.of(context).size.width * .62,
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.grey),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: TextFormField(
-                    keyboardType: TextInputType.phone,
-                    decoration: InputDecoration(
-                      hintText: "enter your mobile number",
-                      hintStyle: TextStyle(color: Colors.grey),
-                      border: OutlineInputBorder(borderSide: BorderSide.none),
-                    ),
-                  ),
-                ),
-              ),
-
-              Positioned(
-                top: 410,
-                left: 30,
-                child: Container(
+                SizedBox(height: 10),
+                Container(
                   height: 47,
                   width: MediaQuery.of(context).size.width * .85,
                   decoration: BoxDecoration(
@@ -116,13 +134,10 @@ class _LoginPage1State extends State<LoginPage1> {
                     ),
                   ),
                 ),
-              ),
-
-              Positioned(
-                top: 460,
-                left: 30,
-                child: Row(
+                SizedBox(height: 10),
+                Row(
                   children: [
+                    SizedBox(width: 30),
                     Text(
                       "Did't recived the code ?",
                       style: TextStyle(color: Colors.grey),
@@ -131,46 +146,37 @@ class _LoginPage1State extends State<LoginPage1> {
                       " Resend the OTP",
                       style: TextStyle(color: Color(0xff6E3667), fontSize: 14),
                     ),
-                    SizedBox(width: 35),
+                    SizedBox(width: MediaQuery.of(context).size.width * .02),
                     Text(" 12:12", style: TextStyle(color: Colors.grey)),
                   ],
                 ),
-              ),
-
-              Positioned(
-                top: 550,
-                left: 30,
-                right: 30,
-                child: GestureDetector(
-                  onTap: () {
-                    openDialoge();
-                  },
-                  child: Container(
-                    height: 45,
-                    width: MediaQuery.of(context).size.width * .9,
-                    decoration: BoxDecoration(
-                      color: Color(0xffEEFFD7),
-
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Center(
-                      child: Text(
-                        "Verify",
-                        style: TextStyle(
-                          fontSize: 20,
-                          color: Color.fromARGB(255, 108, 168, 25),
-                        ),
+                SizedBox(height: 50),
+                mobileOtpController.text.isNotEmpty
+                    ? SizedBox(
+                      width: MediaQuery.of(context).size.width * .85,
+                      child: Appbutton(
+                        widgetColors: Color(0xff8EC63F),
+                        textColors: Colors.black,
+                        label: "Get Otp",
+                        onTap: () => openDialoge(),
+                      ),
+                    )
+                    : SizedBox(
+                      width: MediaQuery.of(context).size.width * .85,
+                      child: Appbutton(
+                        textColors: Colors.green,
+                        widgetColors: Color(0xffEEFFD7),
+                        label: "verify",
+                        onTap: () => openDialoge(),
                       ),
                     ),
-                  ),
-                ),
-              ),
-              Positioned(
-                top: 630,
-                left: MediaQuery.of(context).size.width * .2,
-                child: Row(
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    SizedBox(width: 30),
                     Text(" Dont't have account?", style: TextStyle()),
+
                     SizedBox(width: 8),
                     GestureDetector(
                       onTap: () {
@@ -189,13 +195,9 @@ class _LoginPage1State extends State<LoginPage1> {
                     ),
                   ],
                 ),
-              ),
-              Positioned(
-                top: 645,
-
-                child: Image.asset(fit: BoxFit.fill, Images.groupfooter),
-              ),
-            ],
+                Image.asset(Images.groupfooter),
+              ],
+            ),
           ),
         ),
       ),
