@@ -10,6 +10,8 @@ import 'package:service/custome_widgets/order_request.dart';
 import 'package:service/custome_widgets/remark.dart';
 import 'package:service/custome_widgets/row_promoo_code.dart';
 import 'package:service/custome_widgets/row_service.dart';
+import 'package:service/custome_widgets/service_text_row.dart';
+import 'package:service/screen/schedule_pickup3.dart';
 import 'package:service/utils/image.dart';
 
 class SchedulePickup2 extends StatefulWidget {
@@ -83,6 +85,8 @@ class _SchedulePickup2State extends State<SchedulePickup2> {
               AddressWidget(
                 addresscontroller: addresscontroller,
                 svgimage: SvgPicture.asset(Images.locationsvg),
+                hintname: "Lucknow inventic",
+                changeButton: "Edit Address",
               ),
 
               SizedBox(height: 10),
@@ -173,39 +177,155 @@ class _SchedulePickup2State extends State<SchedulePickup2> {
                                 onTap: () {
                                   FocusScope.of(context).unfocus();
                                 },
-                                child: Expanded(
-                                  child: ListView(
-                                    children: [
-                                      Center(child: Text("Select Service")),
-                                      SizedBox(height: 10),
-                                      RowService(),
-                                      SizedBox(height: 10),
-                                      RowService(),
-                                      SizedBox(height: 10),
-                                      RowService(),
-                                      SizedBox(height: 10),
+                                child: ListView(
+                                  controller: controller,
+                                  children: [
+                                    Center(child: Text("Select Service")),
+                                    SizedBox(height: 10),
+                                    RowService(
+                                      imagename1: Image.asset(Images.dryclean),
+                                      imagename2: Image.asset(
+                                        Images.premimumwash,
+                                      ),
+                                      imagename3: Image.asset(
+                                        Images.luxeservice,
+                                      ),
+                                    ),
+                                    ServiceTextRow(
+                                      servicename1: "Dry clean",
+                                      servicename2: 'premimum wash',
+                                      servicename3: 'Luxe service',
+                                    ),
+                                    SizedBox(height: 10),
 
-                                      Padding(
-                                        padding: EdgeInsets.symmetric(
-                                          horizontal: 20,
-                                        ),
-                                        child: Appbutton(
-                                          label: "Confirm",
-                                          onTap: () {},
-                                          widgetColors: Color(0xff8EC63F),
-                                          textColors: Colors.black,
+                                    RowService(
+                                      imagename1: Image.asset(Images.sareeroll),
+                                      imagename2: Image.asset(Images.suitcase),
+                                      imagename3: Image.asset(
+                                        Images.shoecleaning,
+                                      ),
+                                    ),
+                                    ServiceTextRow(
+                                      servicename1: "Saree Roll",
+                                      servicename2: 'suit case',
+                                      servicename3: 'show clean',
+                                    ),
+
+                                    SizedBox(height: 10),
+                                    RowService(
+                                      imagename1: Image.asset(
+                                        Images.bagsuitcase,
+                                      ),
+                                      imagename2: Image.asset(
+                                        Images.premimumsteam,
+                                      ),
+                                      imagename3: Image.asset(
+                                        Images.regularwash2,
+                                      ),
+                                    ),
+                                    ServiceTextRow(
+                                      servicename1: "Bags/suitcase/purse",
+                                      servicename2: 'premium steam',
+                                      servicename3: 'Regular wash',
+                                    ),
+                                    SizedBox(height: 10),
+                                    RowService(
+                                      imagename1: Image.asset(
+                                        Images.regularwash,
+                                      ),
+                                      imagename2: Image.asset(
+                                        Images.carpetcleaning,
+                                      ),
+                                      imagename3: Image.asset(
+                                        Images.curtaincleaning,
+                                      ),
+                                    ),
+                                    ServiceTextRow(
+                                      servicename1: "Regular wash",
+                                      servicename2: 'Carpet cleaning',
+                                      servicename3: 'Curtain cleaning',
+                                    ),
+                                    SizedBox(height: 30),
+
+                                    Padding(
+                                      padding: EdgeInsets.only(left: 20),
+                                      child: Text(
+                                        "Note:",
+                                        style: TextStyle(
+                                          color: Color(0xff6E3667),
+                                          fontWeight: FontWeight.w300,
                                         ),
                                       ),
-                                      Center(
-                                        child: ElevatedButton(
-                                          onPressed: () {
-                                            Navigator.pop(context);
-                                          },
-                                          child: Text("back"),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.only(left: 20),
+                                      child: Text(
+                                        "Do go head and place the pickup request by just ",
+                                        style: TextStyle(
+                                          fontSize: 13,
+                                          color: Color(0xff6E3667),
                                         ),
                                       ),
-                                    ],
-                                  ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.only(left: 20),
+                                      child: Text(
+                                        "Choosing service(s) you require. you can mention the required",
+                                        style: TextStyle(
+                                          fontSize: 13,
+                                          color: Color(0xff6E3667),
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.only(left: 20),
+                                      child: Text(
+                                        "service for each individual item to executive when they come",
+                                        style: TextStyle(
+                                          fontSize: 13,
+                                          color: Color(0xff6E3667),
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.only(left: 20),
+                                      child: Text(
+                                        "to pickup your items",
+                                        style: TextStyle(
+                                          fontSize: 13,
+                                          color: Color(0xff6E3667),
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 20,
+                                      ),
+                                      child: Appbutton(
+                                        label: "Confirm",
+                                        onTap: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder:
+                                                  (context) =>
+                                                      SchedulePickup3(),
+                                            ),
+                                          );
+                                        },
+                                        widgetColors: Color(0xff8EC63F),
+                                        textColors: Colors.black,
+                                      ),
+                                    ),
+                                    Center(
+                                      child: ElevatedButton(
+                                        onPressed: () {
+                                          Navigator.pop(context);
+                                        },
+                                        child: Text("back"),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),

@@ -48,6 +48,7 @@ class _HomeState extends State<Home> {
               child: Icon(Icons.notifications_outlined),
             ),
           ),
+        
         ],
         leading: Padding(
           padding: EdgeInsets.only(left: 20),
