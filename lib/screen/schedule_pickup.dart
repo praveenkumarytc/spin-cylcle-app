@@ -56,9 +56,10 @@ class _SchedulePickupState extends State<SchedulePickup> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    // DeliveryTypeIcon(iconname: Image.asset(Images.car)),
-                    // DeliveryTypeIcon(iconname: Image.asset(Images.flight)),
-                    // DeliveryTypeIcon(iconname: Image.asset(Images.rocket)),
+
+                    DeliveryTypeIcon(iconname: Image.asset(Images.car)),
+                    DeliveryTypeIcon(iconname: Image.asset(Images.flight)),
+                    DeliveryTypeIcon(iconname: Image.asset(Images.rocket)),
                   ],
                 ),
               ),
@@ -83,6 +84,8 @@ class _SchedulePickupState extends State<SchedulePickup> {
               AddressWidget(
                 addresscontroller: addresscontroller,
                 svgimage: SvgPicture.asset(Images.locationsvg),
+                hintname: "enter your address",
+                changeButton: "Add Address",
               ),
 
               SizedBox(height: 10),

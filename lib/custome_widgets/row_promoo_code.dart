@@ -6,7 +6,7 @@ class RowPromooCode extends StatelessWidget {
     super.key,
     required this.havePromo,
     required this.imagename,
-    required this.apply
+    required this.apply,
   });
   final SvgPicture imagename;
   final String havePromo;
@@ -25,7 +25,7 @@ class RowPromooCode extends StatelessWidget {
         ),
         child: Row(
           children: [
-            Padding(padding: EdgeInsets.only(left: 6), child: imagename),
+            Padding(padding: EdgeInsets.only(left: 12), child: imagename),
             Expanded(
               child: Container(
                 margin: EdgeInsets.only(right: 10, left: 10),
@@ -38,11 +38,18 @@ class RowPromooCode extends StatelessWidget {
                   ),
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: Center(child: Center(child: Text(havePromo,style: TextStyle(color: Colors.green),))),
+                child: Center(
+                  child: Center(
+                    child: Text(
+                      havePromo,
+                      style: TextStyle(color: Colors.green),
+                    ),
+                  ),
+                ),
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(right: 6),
+              padding: EdgeInsets.only(right: 12),
               child: Container(
                 height: 30,
                 width: 80,

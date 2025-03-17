@@ -17,7 +17,8 @@ class _SplashscreenState extends State<Splashscreen>
         context,
         MaterialPageRoute(builder: (context) => OnboardingScreen1()),
       );
-    });
+    }
+    );
   }
 
   @override

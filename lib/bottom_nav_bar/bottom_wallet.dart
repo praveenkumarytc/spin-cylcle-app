@@ -1,0 +1,10 @@
+import 'package:flutter/material.dart';
+
+class BottomWallet extends StatelessWidget {
+  const BottomWallet({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(body: Center(child: Text("Wallet")));
+  }
+}

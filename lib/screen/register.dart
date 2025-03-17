@@ -174,7 +174,10 @@ class _RegisterState extends State<Register> {
                         textColors: Colors.black,
                         widgetColors: Color(0xff8EC63F),
                         label: "Sign Up",
-                        onTap: () => openDialoge(),
+                        onTap: () {
+                          openDialoge();
+                          splashScreen();
+                        },
                       ),
                     )
                     : SizedBox(
@@ -183,7 +186,7 @@ class _RegisterState extends State<Register> {
                         widgetColors: Color(0xffEEFFD7),
                         textColors: Colors.green,
                         label: "Sign Up",
-                        onTap: () => openDialoge(),
+                        onTap: () => null,
                       ),
                     ),
 
@@ -210,15 +213,7 @@ class _RegisterState extends State<Register> {
                     ),
                   ],
                 ),
-                InkWell(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Home()),
-                    );
-                  },
-                  child: Image.asset(Images.groupfooter),
-                ),
+                Image.asset(Images.groupfooter),
               ],
             ),
           ),
@@ -227,10 +222,22 @@ class _RegisterState extends State<Register> {
     );
   }
 
-  Future openDialoge() => (showDialog(
-    context: context,
-    builder:
-        (context) =>
-            Center(child: CircularProgressIndicator(color: Colors.green)),
-  ));
+  void splashScreen() async {
+    await Future.delayed(Duration(seconds: 3), () {
+      Navigator.pop(context);
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => Home()),
+      );
+    });
+  }
+
+  Future openDialoge() async {
+    showDialog(
+      context: context,
+      builder:
+          (context) =>
+              Center(child: CircularProgressIndicator(color: Colors.green)),
+    );
+  }
 }
