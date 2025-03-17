@@ -9,14 +9,10 @@ class Splashscreen extends StatefulWidget {
   State<Splashscreen> createState() => _SplashscreenState();
 }
 
-class _SplashscreenState extends State<Splashscreen>
-    with SingleTickerProviderStateMixin {
+class _SplashscreenState extends State<Splashscreen> with SingleTickerProviderStateMixin {
   void splashScreen() async {
     await Future.delayed(Duration(seconds: 4), () {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => OnboardingScreen1()),
-      );
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => OnboardingScreen1()));
     });
   }
 
@@ -29,15 +25,6 @@ class _SplashscreenState extends State<Splashscreen>
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: Color(0xff6e3667),
-
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [Center(child: Image.asset(Images.splashLogo))],
-        ),
-      ),
-    );
+    return SafeArea(child: Scaffold(backgroundColor: Color(0xff6e3667), body: Column(mainAxisAlignment: MainAxisAlignment.center, children: [Center(child: Image.asset(Images.splashLogo))])));
   }
 }
