@@ -41,10 +41,28 @@ class Images {
   static const String coupensvg = "assets/images/Container.svg";
   static const String solarwashing = "assets/images/solarwashing.svg";
   static const String truck = "assets/images/truck.svg";
-  static const String profile = "assets/account_icon/profile.svg";
-  
-  static const String wallet = "assets/account_icon/wallet.svg";
-  static const String membership= "assets/account_icon/membership.svg";
-  static const String offers= "assets/account_icon/offers.svg";
-  static const String rate= "assets/account_icon/rupee.svg";
+  static const String profile = "assets/images/profile.svg";
+  static const String wallet = "assets/images/wallet.svg";
+  static const String membership = "assets/images/membership.svg";
+  static const String offers = "assets/images/offers.svg";
+  static const String rate = "assets/images/rupee.svg";
+  static const String shop = "assets/images/shop.svg";
+  static const String points = "assets/images/point.svg";
+  static const String person = "assets/images/person.svg";
+  static const String logout = "assets/images/logout.svg";
+  static const String help = "assets/images/help.svg";
+  static const String delete = "assets/images/delete.svg";
+  static const String certificate = "assets/images/carbon_certificate.svg";
+  static const String rupee = "assets/images/rupee.svg";
+  static const String termcondition = "assets/images/term_condition.svg";
+  static const String walletbalance = "assets/images/wallet_balance.svg";
+  static const String filter = "assets/images/filter.svg";
+
+  static const String offerframe = "assets/images/offerframe.svg";
+  static const String profileimage = "assets/images/profileimage.jpg";
+  static const String femalesign = "assets/images/femalesign.svg";
+  static const String emailsvg = "assets/images/emailsvg.svg";
+  static const String rectanglemap = "assets/images/Rectangle.svg";
+
+  static const String refer = "assets/images/refer.jpg";
 }

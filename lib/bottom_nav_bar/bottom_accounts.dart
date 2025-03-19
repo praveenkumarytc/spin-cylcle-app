@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:service/bottom_nav_bar/bottom_wallet.dart';
+import 'package:service/bottom_nav_bar/refer_and_earn.dart';
 import 'package:service/custome_widgets/profile_details.dart';
+import 'package:service/profile_screen/my_profile.dart';
+import 'package:service/profile_screen/offers.dart';
 import 'package:service/utils/image.dart';
 
 class BottomAccounts extends StatelessWidget {
@@ -11,94 +14,131 @@ class BottomAccounts extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          Padding(
-            padding: EdgeInsets.only(left: 20, top: 15),
-            child: ProfileDetails(
-              imagetype: Images.datesvg,
-              imageName: "Schedule a Pickup",
+          GestureDetector(
+            onTap: () {},
+            child: Padding(
+              padding: EdgeInsets.only(left: 20, top: 15),
+              child: ProfileDetails(
+                imagetype: Images.datesvg,
+                imageName: "Schedule a Pickup",
+              ),
             ),
           ),
-          Padding(
-            padding: EdgeInsets.only(left: 20, top: 15),
-            child: ProfileDetails(
-              imagetype: Images.profile,
-              imageName: "My profile ",
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => MyProfile()),
+              );
+            },
+            child: Padding(
+              padding: EdgeInsets.only(left: 20, top: 15),
+              child: ProfileDetails(
+                imagetype: Images.profile,
+                imageName: "My profile ",
+              ),
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => BottomWallet()),
+              );
+            },
+            child: Padding(
+              padding: EdgeInsets.only(left: 20, top: 20),
+              child: ProfileDetails(
+                imagetype: Images.wallet,
+                imageName: "Wallet",
+              ),
             ),
           ),
           Padding(
             padding: EdgeInsets.only(left: 20, top: 20),
             child: ProfileDetails(
-              imagetype: Images.wallet,
-              imageName: "Wallet",
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: 20, top: 20),
-            child: ProfileDetails(
-              imagetype: Images.pencil,
+              imagetype: Images.membership,
               imageName: "Membership and rewards",
             ),
           ),
-          Padding(
-            padding: EdgeInsets.only(left: 20, top: 20),
-            child: ProfileDetails(
-              imagetype: Images.pencil,
-              imageName: "offers cards ",
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Offers(tittle: "Offers"),
+                ),
+              );
+            },
+            child: Padding(
+              padding: EdgeInsets.only(left: 20, top: 20),
+              child: ProfileDetails(
+                imagetype: Images.offers,
+                imageName: "offers cards ",
+              ),
             ),
           ),
           Padding(
             padding: EdgeInsets.only(left: 20, top: 20),
             child: ProfileDetails(
-              imagetype: Images.pencil,
+              imagetype: Images.rate,
               imageName: "Rate cards ",
             ),
           ),
           Padding(
             padding: EdgeInsets.only(left: 20, top: 20),
             child: ProfileDetails(
-              imagetype: Images.pencil,
+              imagetype: Images.shop,
               imageName: "visit Store",
             ),
           ),
           Padding(
             padding: EdgeInsets.only(left: 20, top: 20),
             child: ProfileDetails(
-              imagetype: Images.pencil,
+              imagetype: Images.points,
               imageName: "Points",
             ),
           ),
-          Padding(
-            padding: EdgeInsets.only(left: 20, top: 20),
-            child: ProfileDetails(
-              imagetype: Images.pencil,
-              imageName: "Refer and earns 1000",
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ReferAndEarn()),
+              );
+            },
+            child: Padding(
+              padding: EdgeInsets.only(left: 20, top: 20),
+              child: ProfileDetails(
+                imagetype: Images.rupee,
+                imageName: "Refer and earns 10000",
+              ),
             ),
           ),
           Padding(
             padding: EdgeInsets.only(left: 20, top: 20),
             child: ProfileDetails(
-              imagetype: Images.pencil,
+              imagetype: Images.help,
               imageName: "Help & support",
             ),
           ),
           Padding(
             padding: EdgeInsets.only(left: 20, top: 20),
             child: ProfileDetails(
-              imagetype: Images.pencil,
+              imagetype: Images.termcondition,
               imageName: "Term and conditions",
             ),
           ),
           Padding(
             padding: EdgeInsets.only(left: 20, top: 20),
             child: ProfileDetails(
-              imagetype: Images.pencil,
+              imagetype: Images.delete,
               imageName: "Delete my account ",
             ),
           ),
           Padding(
             padding: EdgeInsets.only(left: 20, top: 20),
             child: ProfileDetails(
-              imagetype: Images.pencil,
+              imagetype: Images.logout,
               imageName: "Log Out ",
             ),
           ),

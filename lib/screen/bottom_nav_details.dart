@@ -17,7 +17,7 @@ class AccountDetails extends StatefulWidget {
 }
 
 class _AccountDetailsState extends State<AccountDetails> {
-  var indexx = 0;
+  var indexx = 2;
   final screens = [
     BottomHome(),
     BottomSell(),
