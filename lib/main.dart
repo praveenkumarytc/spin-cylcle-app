@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:service/bottom_nav_bar/test.dart';
 import 'package:service/screen/bottom_nav_details.dart';
 import 'package:service/screen/myorders.dart';
 import 'package:service/screen/notification.dart';
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const AccountDetails(),
-      //  Splashscreen(), Notification1(),
+      //  Splashscreen(), Notification1(),AccountDetails(),Test1(),
     );
   }
 }

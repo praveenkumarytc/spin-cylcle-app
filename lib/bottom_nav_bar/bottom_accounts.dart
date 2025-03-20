@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:service/bottom_nav_bar/bottom_wallet.dart';
 import 'package:service/bottom_nav_bar/refer_and_earn.dart';
+import 'package:service/bottom_nav_bar/test.dart';
 import 'package:service/custome_widgets/profile_details.dart';
 import 'package:service/profile_screen/my_profile.dart';
 import 'package:service/profile_screen/offers.dart';
@@ -15,7 +16,12 @@ class BottomAccounts extends StatelessWidget {
       child: Column(
         children: [
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Test1()),
+              );
+            },
             child: Padding(
               padding: EdgeInsets.only(left: 20, top: 15),
               child: ProfileDetails(

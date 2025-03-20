@@ -1,4 +1,6 @@
+import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:service/utils/colors.dart';
 import 'package:service/utils/image.dart';
@@ -48,6 +50,7 @@ class _ReferAndEarnState extends State<ReferAndEarn> {
             "your personal code",
             style: TextStyle(color: Mycolors.greyColor),
           ),
+          DottedBorder(child: Text("atiq khan")),
         ],
       ),
     );
