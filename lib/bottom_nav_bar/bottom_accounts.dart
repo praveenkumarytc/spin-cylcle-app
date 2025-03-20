@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:service/bottom_nav_bar/bottom_wallet.dart';
 import 'package:service/bottom_nav_bar/refer_and_earn.dart';
 import 'package:service/bottom_nav_bar/test.dart';
+import 'package:service/bottom_nav_bar/visit_stores.dart';
 import 'package:service/custome_widgets/profile_details.dart';
 import 'package:service/profile_screen/my_profile.dart';
 import 'package:service/profile_screen/offers.dart';
@@ -91,11 +92,19 @@ class BottomAccounts extends StatelessWidget {
               imageName: "Rate cards ",
             ),
           ),
-          Padding(
-            padding: EdgeInsets.only(left: 20, top: 20),
-            child: ProfileDetails(
-              imagetype: Images.shop,
-              imageName: "visit Store",
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => VisitStores()),
+              );
+            },
+            child: Padding(
+              padding: EdgeInsets.only(left: 20, top: 20),
+              child: ProfileDetails(
+                imagetype: Images.shop,
+                imageName: "visit Store",
+              ),
             ),
           ),
           Padding(

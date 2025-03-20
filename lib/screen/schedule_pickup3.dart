@@ -66,9 +66,9 @@ class _SchedulePickup3State extends State<SchedulePickup3> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    // DeliveryTypeIcon(iconname: Image.asset(Images.car)),
-                    // DeliveryTypeIcon(iconname: Image.asset(Images.flight)),
-                    // DeliveryTypeIcon(iconname: Image.asset(Images.rocket)),
+                    DeliveryTypeIcon(iconname: Image.asset(Images.car)),
+                    DeliveryTypeIcon(iconname: Image.asset(Images.flight)),
+                    DeliveryTypeIcon(iconname: Image.asset(Images.rocket)),
                   ],
                 ),
               ),

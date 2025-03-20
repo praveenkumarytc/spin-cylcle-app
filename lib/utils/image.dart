@@ -62,7 +62,7 @@ class Images {
   static const String profileimage = "assets/images/profileimage.jpg";
   static const String femalesign = "assets/images/femalesign.svg";
   static const String emailsvg = "assets/images/emailsvg.svg";
-  static const String rectanglemap = "assets/images/Rectangle.svg";
+  static const String rectanglemap = "assets/images/Rectangle.png";
 
   static const String refer = "assets/images/refer.jpg";
 }

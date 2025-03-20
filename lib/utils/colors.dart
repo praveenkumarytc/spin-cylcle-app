@@ -7,5 +7,6 @@ class Mycolors {
   static const pinkColor = Color(0xffF6E2FF);
   static const greyColor = Color(0xff6C7072);
   static const lightgreyColor = Color(0xffEFEFEF);
-  static const lightgreenColor=Color(0xffEEFFD7);
+  static const lightgreenColor = Color(0xffEEFFD7);
+  static const lightcolor = Color(0xffF7F5FA);
 }
