@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:service/custome_widgets/dotted.dart';
+
+import '../screen/order_details.dart';
 
 class MenuButton extends StatefulWidget {
   const MenuButton({
@@ -45,23 +48,38 @@ class _MenuButtonState extends State<MenuButton> {
                         widget.ID,
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
-                      Text(widget.Day),
-                      Text(widget.Time),
+                      Text(
+                        widget.Day,
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        widget.Time,
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
                     ],
                   ),
                 ),
                 Container(
-                  color: Colors.purpleAccent,
-                  width: 100,
-                  height: 50,
+                  color: Color(0xFFF1D3FF),
+                  width: 80,
+                  height: 30,
                   alignment: Alignment.center,
-                  child: Text(widget.Status, style: TextStyle(color: Colors.white)),
+                  child: Text(
+                    widget.Status,
+                    style: TextStyle(color: Colors.purple),
+                  ),
                 ),
               ],
             ),
-            Divider(),
+            SizedBox(
+              height: 10,
+            ),
+            Dotted(num: 12),
+            SizedBox(
+              height: 10,
+            ),
+
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Image.asset(
                   'assets/images/Group 33317.png',
@@ -70,11 +88,19 @@ class _MenuButtonState extends State<MenuButton> {
                 ),
                 Column(
                   children: [
-                    Text(widget.Date),
-                    Row(children: [Icon(Icons.access_time), Text(widget.Clock)]),
+                    Text(widget.Date, style: TextStyle(color: Colors.grey)),
+                    Row(
+                      children: [
+                        Icon(Icons.access_time),
+                        Text(
+                          widget.Clock,
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                      ],
+                    ),
                   ],
                 ),
-                SizedBox(width: 10),
+                SizedBox(width: 130),
                 Image.asset(
                   'assets/images/Group 33317.png',
                   width: 40,
@@ -82,8 +108,16 @@ class _MenuButtonState extends State<MenuButton> {
                 ),
                 Column(
                   children: [
-                    Text(widget.Date),
-                    Row(children: [Icon(Icons.access_time), Text(widget.Clock)]),
+                    Text(widget.Date, style: TextStyle(color: Colors.grey)),
+                    Row(
+                      children: [
+                        Icon(Icons.access_time),
+                        Text(
+                          widget.Clock,
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ],
@@ -96,14 +130,15 @@ class _MenuButtonState extends State<MenuButton> {
 }
 
 // OrderCard Widget
-class OrderCard extends StatefulWidget {
-  const OrderCard({
+class OrderWidget extends StatefulWidget {
+  const OrderWidget({
     super.key,
     required this.OrderID,
     required this.Date,
     required this.Time,
     required this.Status,
     required this.Location,
+    required this.Clock, // Added Clock field
   });
 
   final String OrderID;
@@ -111,12 +146,13 @@ class OrderCard extends StatefulWidget {
   final String Time;
   final String Status;
   final String Location;
+  final String Clock; // Added Clock field
 
   @override
-  State<OrderCard> createState() => _OrderCardState();
+  State<OrderWidget> createState() => _OrderWidgetState();
 }
 
-class _OrderCardState extends State<OrderCard> {
+class _OrderWidgetState extends State<OrderWidget> {
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -139,58 +175,82 @@ class _OrderCardState extends State<OrderCard> {
                         widget.OrderID,
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
-                      Text(widget.Date),
-                      Text(widget.Time),
+                      Text(
+                        widget.Date,
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        widget.Time,
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
                     ],
                   ),
                 ),
                 Container(
-                  color: Colors.purpleAccent,
-                  width: 100,
-                  height: 50,
+                  color: Color(0xFFF1D3FF),
+                  width: 80,
+                  height: 30,
                   alignment: Alignment.center,
-                  child: Text(widget.Status, style: TextStyle(color: Colors.white)),
+                  child: Text(
+                    widget.Status,
+                    style: TextStyle(color: Colors.purple),
+                  ),
                 ),
               ],
             ),
-            Divider(),
+            SizedBox(
+              height: 10,
+            ),
+            Dotted(num: 12),
+            SizedBox(
+              height: 10,
+            ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Row(
+                Image.asset(
+                  'assets/images/Group 33317.png',
+                  width: 40,
+                  height: 40,
+                ),
+                Column(
                   children: [
-                    Image.asset(
-                      'assets/images/Group 33317.png',
-                      width: 40,
-                      height: 40,
-                    ),
-                    Column(
+                    Text(widget.Location, style: TextStyle(color: Colors.grey)),
+                    Row(
                       children: [
-                        Text(widget.Location),
-                        Row(children: [Icon(Icons.access_time), Text(widget.Time)]),
+                        Icon(Icons.access_time),
+                        Text(
+                          widget.Clock,
+                          style: TextStyle(color: Colors.grey),
+                        ),
                       ],
                     ),
+                    // Added the Clock field below the time
                   ],
                 ),
-                Spacer(),
-                Row(
+                SizedBox(width: 130),
+                Image.asset(
+                  'assets/images/Group 33317.png',
+                  width: 40,
+                  height: 40,
+                ),
+                Column(
                   children: [
-                    Image.asset(
-                      'assets/images/Group 33317.png',
-                      width: 40,
-                      height: 40,
-                    ),
-                    Column(
+                    Text(widget.Location, style: TextStyle(color: Colors.grey)),
+                    Row(
                       children: [
-                        Text(widget.Location),
-                        Row(children: [Icon(Icons.access_time), Text(widget.Time)]),
+                        Icon(Icons.access_time),
+                        Text(
+                          widget.Clock,
+                          style: TextStyle(color: Colors.grey),
+                        ),
                       ],
                     ),
+                    // Added the Clock field below the time
                   ],
                 ),
-
               ],
             ),
-
           ],
         ),
       ),
@@ -204,6 +264,7 @@ class ProductCard extends StatefulWidget {
     super.key,
     required this.ProductID,
     required this.Name,
+    required this.Time,
     required this.Description,
     required this.Price,
     required this.Category,
@@ -211,6 +272,7 @@ class ProductCard extends StatefulWidget {
 
   final String ProductID;
   final String Name;
+  final String Time;
   final String Description;
   final String Price;
   final String Category;
@@ -222,71 +284,119 @@ class ProductCard extends StatefulWidget {
 class _ProductCardState extends State<ProductCard> {
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: Colors.white,
-      elevation: 4,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            Row(
-              children: [
-                Image.asset('assets/images/product_image.png', width: 50, height: 50),
-                SizedBox(width: 10),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder:
+                (context) => OrderDetails(
+                  productID: widget.ProductID,
+                  name: widget.Name,
+                  description: widget.Description,
+                  price: widget.Price,
+                  category: widget.Category,
+                ),
+          ),
+        );
+      },
+      child: Card(
+        color: Colors.white,
+        elevation: 4,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  Image.asset('assets/images/solar.png', width: 50, height: 50),
+                  SizedBox(width: 10),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          widget.ProductID,
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          widget.Name,
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          widget.Time,
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    color: Color(0xFFE3FFBB),
+                    width: 80,
+                    height: 30,
+                    alignment: Alignment.center,
+                    child: Text(
+                      widget.Description,
+                      style: TextStyle(color: Colors.green),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Dotted(num: 12),
+              SizedBox(
+                height: 10,
+              ),
+              Row(
+                children: [
+                  Row(
                     children: [
-                      Text(
-                        widget.Name,
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                      Image.asset(
+                        'assets/images/Group 33317.png',
+                        width: 40,
+                        height: 40,
                       ),
-                      Text(widget.Description),
+                      Column(
+                        children: [
+                          Text(widget.Price),
+                          Row(
+                            children: [
+                              Icon(Icons.access_time),
+                              Text(widget.Category),
+                            ],
+                          ),
+                        ],
+                      ),
                     ],
                   ),
-                ),
-                Text(widget.Price, style: TextStyle(fontWeight: FontWeight.bold)),
-              ],
-            ),
-            Divider(),
-            Row(
-              children: [
-                Row(
-                  children: [
-                    Image.asset(
-                      'assets/images/Group 33317.png',
-                      width: 40,
-                      height: 40,
-                    ),
-                    Column(
-                      children: [
-                        Text(widget.Price),
-                        Row(children: [Icon(Icons.access_time), Text(widget.Category)]),
-                      ],
-                    ),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Image.asset(
-                      'assets/images/Group 33317.png',
-                      width: 40,
-                      height: 40,
-                    ),
-                    Column(
-                      children: [
-                        Text(widget.Price),
-                        Row(children: [Icon(Icons.access_time), Text(widget.Category)]),
-                      ],
-                    ),
-                  ],
-                ),
-
-              ],
-            ),
-
-          ],
+                  Spacer(),
+                  Row(
+                    children: [
+                      Image.asset(
+                        'assets/images/Group 33317.png',
+                        width: 40,
+                        height: 40,
+                      ),
+                      Column(
+                        children: [
+                          Text(widget.Price),
+                          Row(
+                            children: [
+                              Icon(Icons.access_time),
+                              Text(widget.Category),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -300,21 +410,25 @@ class TaskCard extends StatefulWidget {
     required this.TaskID,
     required this.Title,
     required this.DueDate,
+    required this.Time,
     required this.Priority,
     required this.AssignedTo,
+    required this.Clock,
   });
 
   final String TaskID;
   final String Title;
   final String DueDate;
+  final String Time;
   final String Priority;
   final String AssignedTo;
+  final String Clock;
 
   @override
-  State<TaskCard> createState() => _TaskCardState();
+  State<TaskCard> createState() => _TaskCardUpdatedState();
 }
 
-class _TaskCardState extends State<TaskCard> {
+class _TaskCardUpdatedState extends State<TaskCard> {
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -327,7 +441,7 @@ class _TaskCardState extends State<TaskCard> {
           children: [
             Row(
               children: [
-                Icon(Icons.assignment, size: 50),
+                Image.asset('assets/images/solar.png', width: 50, height: 50),
                 SizedBox(width: 10),
                 Expanded(
                   child: Column(
@@ -337,59 +451,85 @@ class _TaskCardState extends State<TaskCard> {
                         widget.Title,
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
-                      Text('Due: ${widget.DueDate}'),
+                      Text(
+                        widget.DueDate,
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        widget.Time,
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
                     ],
                   ),
                 ),
                 Container(
-                  color: Color(0xFFE3FFBB),
-                  width: 100,
-                  height: 50,
+                  color: Color(0xFFFFD0D0),
+                  width: 80,
+                  height: 30,
                   alignment: Alignment.center,
                   child: Text(
                     widget.Priority,
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: Colors.red),
                   ),
                 ),
               ],
             ),
-            Divider(),
+            SizedBox(
+              height: 10,
+            ),
+            Dotted(num: 12),
+            SizedBox(
+              height: 10,
+            ),
             Row(
               children: [
-                Row(
+                Image.asset(
+                  'assets/images/Group 33317.png',
+                  width: 40,
+                  height: 40,
+                ),
+                Column(
                   children: [
-                    Image.asset(
-                      'assets/images/Group 33317.png',
-                      width: 40,
-                      height: 40,
+                    Text(
+                      widget.AssignedTo,
+                      style: TextStyle(color: Colors.grey),
                     ),
-                    Column(
+                    Row(
                       children: [
-                        Text(widget.Priority),
-                        Row(children: [Icon(Icons.access_time), Text(widget.AssignedTo)]),
+                        Icon(Icons.access_time),
+                        Text(
+                          widget.Clock,
+                          style: TextStyle(color: Colors.grey),
+                        ),
                       ],
                     ),
                   ],
                 ),
-                Row(
+                SizedBox(width: 130),
+                Image.asset(
+                  'assets/images/Group 33317.png',
+                  width: 40,
+                  height: 40,
+                ),
+                Column(
                   children: [
-                    Image.asset(
-                      'assets/images/Group 33317.png',
-                      width: 40,
-                      height: 40,
+                    Text(
+                      widget.AssignedTo,
+                      style: TextStyle(color: Colors.grey),
                     ),
-                    Column(
+                    Row(
                       children: [
-                        Text(widget.Priority),
-                        Row(children: [Icon(Icons.access_time), Text(widget.AssignedTo)]),
+                        Icon(Icons.access_time),
+                        Text(
+                          widget.Clock,
+                          style: TextStyle(color: Colors.grey),
+                        ),
                       ],
                     ),
                   ],
                 ),
-
               ],
             ),
-
           ],
         ),
       ),
@@ -399,46 +539,48 @@ class _TaskCardState extends State<TaskCard> {
 
 // Main App Example
 void main() {
-  runApp(MaterialApp(
-    home: Scaffold(
-      appBar: AppBar(title: Text('Custom Widgets Example')),
-      body: ListView(
-        children: [
-         //Completed
-          MenuButton(
-            ID: '123456',
-            Day: 'Monday, 9 Feb 2025',
-            Time: '05:40 PM',
-            Status: 'Pending',
-            Date: '23 Feb, 2025',
-            Clock: '20:21:00',
-          ),
-          //Active
-          OrderCard(
-            OrderID: '12345',
-            Date: '23 Feb 2025',
-            Time: '10:00 AM',
-            Status: 'Completed',
-            Location: 'New York',
-          ),
-
-          ProductCard(
-            ProductID: 'P123',
-            Name: 'Smartphone',
-            Description: 'Latest model with great features',
-            Price: '\$699',
-            Category: 'Electronics',
-          ),
-          //Completed
-          TaskCard(
-            TaskID: 'T1001',
-            Title: 'Complete Project',
-            DueDate: '25 Feb 2025',
-            Priority: 'High',
-            AssignedTo: 'John Doe',
-          ),
-        ],
+  runApp(
+    MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text('Custom Widgets Example')),
+        body: ListView(
+          children: [
+            MenuButton(
+              ID: 'OrderID #123456',
+              Day: 'Monday, 24 Feb 2025',
+              Time: '05:04 pm',
+              Status: 'Pending',
+              Date: '9 Feb 2025',
+              Clock: '20-21:59',
+            ),
+            OrderWidget(
+              OrderID: 'OrderID #123456',
+              Date: 'Monday, 24 Feb 2025',
+              Time: '05:04 pm',
+              Status: 'Pending',
+              Location: '9 Feb 2025',
+              Clock: '21:20:33',
+            ),
+            ProductCard(
+              ProductID: 'OrderID #123456',
+              Name: 'Monday, 24 Feb 2025',
+              Time: '05:04 pm',
+              Description: 'Pending',
+              Price: '9 Feb 2025',
+              Category: '21:20:33',
+            ),
+            TaskCard(
+              TaskID: 'OrderID #123456',
+              Title: 'Monday, 24 Feb 2025',
+              DueDate: 'Monday',
+              Time: '05:04 pm',
+              Priority: 'Pending',
+              AssignedTo: '9 Feb 2025',
+              Clock: '21:20:33',
+            ),
+          ],
+        ),
       ),
     ),
-  ));
+  );
 }
