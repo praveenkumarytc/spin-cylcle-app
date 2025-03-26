@@ -128,7 +128,7 @@ class ScrollableWidgett extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 600,
+      height: 500,
       decoration: BoxDecoration(
         color: Colors.white,
         gradient: LinearGradient(
@@ -229,7 +229,7 @@ class ScrollableWidgets extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 600,
+      height: 550,
       decoration: BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.bottomLeft,
@@ -333,7 +333,7 @@ class ScrollableWidgetss extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 570,
+      height: 550,
       decoration: BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.bottomLeft, // Start point of the gradient

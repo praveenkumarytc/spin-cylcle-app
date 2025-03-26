@@ -10,7 +10,8 @@ class Membership extends StatefulWidget {
 }
 
 class _OrdersState extends State<Membership> {
-  String _selectedOption = 'All'; // Default value for selected option
+  String _selectedOption = 'All';
+
 
   @override
   Widget build(BuildContext context) {
@@ -35,9 +36,7 @@ class _OrdersState extends State<Membership> {
                   child: Row(
                     children: [
                       GestureDetector(
-                        onTap: () {
-                          _onOptionSelected('MemberShip Plan');
-                        },
+                        onTap: () => _onOptionSelected('MemberShip & Rewards'),
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
@@ -45,7 +44,7 @@ class _OrdersState extends State<Membership> {
                               Text(
                                 'MemberShip Plan',
                                 style: TextStyle(
-                                  color: Colors.white,
+                                  color: _selectedOption == 'MemberShip & Rewards' ? Colors.white : Colors.grey,// Change text color based on selection
                                   fontSize: 15,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -56,7 +55,7 @@ class _OrdersState extends State<Membership> {
                               Container(
                                 height: 2,
                                 width: 130,
-                                color: Colors.white,
+                                color: _selectedOption == 'MemberShip & Rewards' ? Colors.white : Colors.grey, // Change text color based on selection
                               )
                             ],
                           ),
@@ -73,7 +72,7 @@ class _OrdersState extends State<Membership> {
                               Text(
                                 'Current Plan',
                                 style: TextStyle(
-                                  color: Colors.white,
+                                  color: _selectedOption == 'Current Plan' ? Colors.white : Colors.grey, // Change text color based on selection
                                   fontSize: 15,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -84,7 +83,7 @@ class _OrdersState extends State<Membership> {
                               Container(
                                 height: 2,
                                 width: 90,
-                                color: Colors.white,
+                                color: _selectedOption == 'Current Plan' ? Colors.white : Colors.grey, // Change text color based on selection
                               )
                             ],
                           ),
@@ -110,9 +109,9 @@ class _OrdersState extends State<Membership> {
     );
   }
 
-  void _onOptionSelected(String value) {
+  void _onOptionSelected(String value,) {
     setState(() {
-      _selectedOption = value; // Update the selected option and refresh the UI
+      _selectedOption = value;// Update the selected option and refresh the UI
     });
   }
 
@@ -148,7 +147,6 @@ class _OrdersState extends State<Membership> {
                 T5: '',
               ),
               SizedBox(height: 20),
-
               ScrollableWidgets(
                 Images: 'assets/images/bi_bicycle.png',
                 Texts: 'EMPYREAN ORANGE',
@@ -192,7 +190,7 @@ class _OrdersState extends State<Membership> {
           ),
         );
       default:
-        return SingleChildScrollView(
+        return  SingleChildScrollView(
           child: Column(
             children: [
               ScrollableWidget(
@@ -207,8 +205,9 @@ class _OrdersState extends State<Membership> {
                 T4: '',
                 T5: '',
               ),
-              ScrollableWidget(
-                Images: 'assets/images/bi_bicycle.png',
+              SizedBox(height: 20),
+              ScrollableWidgett(
+                Images: 'assets/images/la_car-side.png',
                 Texts: 'EMPYREAN GREEN',
                 Price: '199',
                 Month: '3 Month',
@@ -218,6 +217,34 @@ class _OrdersState extends State<Membership> {
                 Button: 'Buy Now',
                 T4: '',
                 T5: '',
+              ),
+              SizedBox(height: 20),
+
+              ScrollableWidgets(
+                Images: 'assets/images/Vector.png',
+                Texts: 'EMPYREAN ORANGE',
+                Price: '299',
+                Month: '6 Month',
+                T1: '3 free Pickups and deliveries in a month',
+                T2: 'Earn Loyalty Rewards points equal times to your order value',
+                T3: 'Member special discounts and offers',
+                Button: 'Buy Now',
+                T4: 'Member special discounts and offers',
+                T5: 'Member special discounts and offers',
+              ),
+              SizedBox(height: 20),
+
+              ScrollableWidgetss(
+                Images: 'assets/images/ion.png',
+                Texts: 'EMPYREAN PURPLE',
+                Price: '499',
+                Month: '12 Month',
+                T1: '3 free Pickups and deliveries in a month',
+                T2: 'Earn Loyalty Rewards points equal times to your order value',
+                T3: 'Member special discounts and offers',
+                Button: 'Buy Now',
+                T4: 'Member special discounts and offers',
+                T5: 'Member special discounts and offers',
               ),
             ],
           ),

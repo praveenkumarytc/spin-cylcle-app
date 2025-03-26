@@ -24,110 +24,128 @@ class MenuButton extends StatefulWidget {
   @override
   State<MenuButton> createState() => _MenuButtonState();
 }
-
 class _MenuButtonState extends State<MenuButton> {
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: Colors.white,
-      elevation: 4,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            Row(
-              children: [
-                Image.asset('assets/images/solar.png', width: 50, height: 50),
-                SizedBox(width: 10),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder:
+                (context) => OrderDetails(
+              productID: widget.ID,
+              name: widget.Status,
+              description: widget.Date,
+              price: widget.Time,
+              category: widget.Date,
+            ),
+          ),
+        );
+      },
+
+      child:  Card(
+        color: Colors.white,
+        elevation: 4,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  Image.asset('assets/images/solar.png', width: 50, height: 50),
+                  SizedBox(width: 10),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          widget.ID,
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          widget.Day,
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          widget.Time,
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    color: Color(0xFFF1D3FF),
+                    width: 80,
+                    height: 30,
+                    alignment: Alignment.center,
+                    child: Text(
+                      widget.Status,
+                      style: TextStyle(color: Colors.purple),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Dotted(num: 12),
+              SizedBox(
+                height: 10,
+              ),
+
+              Row(
+                children: [
+                  Image.asset(
+                    'assets/images/Group 33317.png',
+                    width: 40,
+                    height: 40,
+                  ),
+                  Column(
                     children: [
-                      Text(
-                        widget.ID,
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                        widget.Day,
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                        widget.Time,
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                      Text(widget.Date, style: TextStyle(color: Colors.grey)),
+                      Row(
+                        children: [
+                          Icon(Icons.access_time),
+                          Text(
+                            widget.Clock,
+                            style: TextStyle(color: Colors.grey),
+                          ),
+                        ],
                       ),
                     ],
                   ),
-                ),
-                Container(
-                  color: Color(0xFFF1D3FF),
-                  width: 80,
-                  height: 30,
-                  alignment: Alignment.center,
-                  child: Text(
-                    widget.Status,
-                    style: TextStyle(color: Colors.purple),
+                  SizedBox(width: 130),
+                  Image.asset(
+                    'assets/images/Group 33317.png',
+                    width: 40,
+                    height: 40,
                   ),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Dotted(num: 12),
-            SizedBox(
-              height: 10,
-            ),
-
-            Row(
-              children: [
-                Image.asset(
-                  'assets/images/Group 33317.png',
-                  width: 40,
-                  height: 40,
-                ),
-                Column(
-                  children: [
-                    Text(widget.Date, style: TextStyle(color: Colors.grey)),
-                    Row(
-                      children: [
-                        Icon(Icons.access_time),
-                        Text(
-                          widget.Clock,
-                          style: TextStyle(color: Colors.grey),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                SizedBox(width: 130),
-                Image.asset(
-                  'assets/images/Group 33317.png',
-                  width: 40,
-                  height: 40,
-                ),
-                Column(
-                  children: [
-                    Text(widget.Date, style: TextStyle(color: Colors.grey)),
-                    Row(
-                      children: [
-                        Icon(Icons.access_time),
-                        Text(
-                          widget.Clock,
-                          style: TextStyle(color: Colors.grey),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ],
+                  Column(
+                    children: [
+                      Text(widget.Date, style: TextStyle(color: Colors.grey)),
+                      Row(
+                        children: [
+                          Icon(Icons.access_time),
+                          Text(
+                            widget.Clock,
+                            style: TextStyle(color: Colors.grey),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
 }
+
 
 // OrderCard Widget
 class OrderWidget extends StatefulWidget {
@@ -151,112 +169,129 @@ class OrderWidget extends StatefulWidget {
   @override
   State<OrderWidget> createState() => _OrderWidgetState();
 }
-
 class _OrderWidgetState extends State<OrderWidget> {
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: Colors.white,
-      elevation: 4,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            Row(
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder:
+                (context) => OrderDetails(
+              productID: widget.OrderID,
+              name: widget.Date,
+              description: widget.Time,
+              price: widget.Status,
+              category: widget.Clock,
+            ),
+          ),
+        );
+      },
+      child: Card(
+          color: Colors.white,
+          elevation: 4,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
               children: [
-                Image.asset('assets/images/solar.png', width: 50, height: 50),
-                SizedBox(width: 10),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        widget.OrderID,
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                Row(
+                  children: [
+                    Image.asset('assets/images/solar.png', width: 50, height: 50),
+                    SizedBox(width: 10),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            widget.OrderID,
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            widget.Date,
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            widget.Time,
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ],
                       ),
-                      Text(
-                        widget.Date,
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    Container(
+                      color: Color(0xFFF1D3FF),
+                      width: 80,
+                      height: 30,
+                      alignment: Alignment.center,
+                      child: Text(
+                        widget.Status,
+                        style: TextStyle(color: Colors.purple),
                       ),
-                      Text(
-                        widget.Time,
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-                Container(
-                  color: Color(0xFFF1D3FF),
-                  width: 80,
-                  height: 30,
-                  alignment: Alignment.center,
-                  child: Text(
-                    widget.Status,
-                    style: TextStyle(color: Colors.purple),
-                  ),
+                SizedBox(
+                  height: 10,
+                ),
+                Dotted(num: 12),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Image.asset(
+                      'assets/images/Group 33317.png',
+                      width: 40,
+                      height: 40,
+                    ),
+                    Column(
+                      children: [
+                        Text(widget.Location, style: TextStyle(color: Colors.grey)),
+                        Row(
+                          children: [
+                            Icon(Icons.access_time),
+                            Text(
+                              widget.Clock,
+                              style: TextStyle(color: Colors.grey),
+                            ),
+                          ],
+                        ),
+                        // Added the Clock field below the time
+                      ],
+                    ),
+                    SizedBox(width: 130),
+                    Image.asset(
+                      'assets/images/Group 33317.png',
+                      width: 40,
+                      height: 40,
+                    ),
+                    Column(
+                      children: [
+                        Text(widget.Location, style: TextStyle(color: Colors.grey)),
+                        Row(
+                          children: [
+                            Icon(Icons.access_time),
+                            Text(
+                              widget.Clock,
+                              style: TextStyle(color: Colors.grey),
+                            ),
+                          ],
+                        ),
+                        // Added the Clock field below the time
+                      ],
+                    ),
+                  ],
                 ),
               ],
             ),
-            SizedBox(
-              height: 10,
-            ),
-            Dotted(num: 12),
-            SizedBox(
-              height: 10,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Image.asset(
-                  'assets/images/Group 33317.png',
-                  width: 40,
-                  height: 40,
-                ),
-                Column(
-                  children: [
-                    Text(widget.Location, style: TextStyle(color: Colors.grey)),
-                    Row(
-                      children: [
-                        Icon(Icons.access_time),
-                        Text(
-                          widget.Clock,
-                          style: TextStyle(color: Colors.grey),
-                        ),
-                      ],
-                    ),
-                    // Added the Clock field below the time
-                  ],
-                ),
-                SizedBox(width: 130),
-                Image.asset(
-                  'assets/images/Group 33317.png',
-                  width: 40,
-                  height: 40,
-                ),
-                Column(
-                  children: [
-                    Text(widget.Location, style: TextStyle(color: Colors.grey)),
-                    Row(
-                      children: [
-                        Icon(Icons.access_time),
-                        Text(
-                          widget.Clock,
-                          style: TextStyle(color: Colors.grey),
-                        ),
-                      ],
-                    ),
-                    // Added the Clock field below the time
-                  ],
-                ),
-              ],
-            ),
-          ],
+          ),
         ),
-      ),
     );
   }
 }
+
 
 // ProductCard Widget
 class ProductCard extends StatefulWidget {
@@ -280,7 +315,6 @@ class ProductCard extends StatefulWidget {
   @override
   State<ProductCard> createState() => _ProductCardState();
 }
-
 class _ProductCardState extends State<ProductCard> {
   @override
   Widget build(BuildContext context) {
@@ -403,6 +437,7 @@ class _ProductCardState extends State<ProductCard> {
   }
 }
 
+
 // TaskCard Widget
 class TaskCard extends StatefulWidget {
   const TaskCard({
@@ -427,115 +462,132 @@ class TaskCard extends StatefulWidget {
   @override
   State<TaskCard> createState() => _TaskCardUpdatedState();
 }
-
 class _TaskCardUpdatedState extends State<TaskCard> {
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: Colors.white,
-      elevation: 4,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            Row(
-              children: [
-                Image.asset('assets/images/solar.png', width: 50, height: 50),
-                SizedBox(width: 10),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder:
+                (context) => OrderDetails(
+              productID: widget.TaskID,
+              name: widget.Title,
+              description: widget.DueDate,
+              price: widget.Time,
+              category: widget.Priority,
+            ),
+          ),
+        );
+      },
+      child: Card(
+        color: Colors.white,
+        elevation: 4,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  Image.asset('assets/images/solar.png', width: 50, height: 50),
+                  SizedBox(width: 10),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          widget.Title,
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          widget.DueDate,
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          widget.Time,
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    color: Color(0xFFFFD0D0),
+                    width: 80,
+                    height: 30,
+                    alignment: Alignment.center,
+                    child: Text(
+                      widget.Priority,
+                      style: TextStyle(color: Colors.red),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Dotted(num: 12),
+              SizedBox(
+                height: 10,
+              ),
+              Row(
+                children: [
+                  Image.asset(
+                    'assets/images/Group 33317.png',
+                    width: 40,
+                    height: 40,
+                  ),
+                  Column(
                     children: [
                       Text(
-                        widget.Title,
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                        widget.AssignedTo,
+                        style: TextStyle(color: Colors.grey),
                       ),
-                      Text(
-                        widget.DueDate,
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                        widget.Time,
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                      Row(
+                        children: [
+                          Icon(Icons.access_time),
+                          Text(
+                            widget.Clock,
+                            style: TextStyle(color: Colors.grey),
+                          ),
+                        ],
                       ),
                     ],
                   ),
-                ),
-                Container(
-                  color: Color(0xFFFFD0D0),
-                  width: 80,
-                  height: 30,
-                  alignment: Alignment.center,
-                  child: Text(
-                    widget.Priority,
-                    style: TextStyle(color: Colors.red),
+                  SizedBox(width: 130),
+                  Image.asset(
+                    'assets/images/Group 33317.png',
+                    width: 40,
+                    height: 40,
                   ),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Dotted(num: 12),
-            SizedBox(
-              height: 10,
-            ),
-            Row(
-              children: [
-                Image.asset(
-                  'assets/images/Group 33317.png',
-                  width: 40,
-                  height: 40,
-                ),
-                Column(
-                  children: [
-                    Text(
-                      widget.AssignedTo,
-                      style: TextStyle(color: Colors.grey),
-                    ),
-                    Row(
-                      children: [
-                        Icon(Icons.access_time),
-                        Text(
-                          widget.Clock,
-                          style: TextStyle(color: Colors.grey),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                SizedBox(width: 130),
-                Image.asset(
-                  'assets/images/Group 33317.png',
-                  width: 40,
-                  height: 40,
-                ),
-                Column(
-                  children: [
-                    Text(
-                      widget.AssignedTo,
-                      style: TextStyle(color: Colors.grey),
-                    ),
-                    Row(
-                      children: [
-                        Icon(Icons.access_time),
-                        Text(
-                          widget.Clock,
-                          style: TextStyle(color: Colors.grey),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ],
+                  Column(
+                    children: [
+                      Text(
+                        widget.AssignedTo,
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                      Row(
+                        children: [
+                          Icon(Icons.access_time),
+                          Text(
+                            widget.Clock,
+                            style: TextStyle(color: Colors.grey),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
 }
+
 
 // Main App Example
 void main() {
