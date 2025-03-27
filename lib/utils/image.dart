@@ -65,4 +65,13 @@ class Images {
   static const String rectanglemap = "assets/images/Rectangle.png";
 
   static const String refer = "assets/images/refer.jpg";
+  static const String helpandsupport = "assets/images/helpsupport.gif";
+  static const String helpsupportbackground =
+      "assets/images/supportbackground.png";
+  static const String whatsaapicon = "assets/images/whataapicon.png";
+  static const String emailicon = "assets/images/emailicon.png";
+  static const String callicon = "assets/images/callicon.png";
+  static const String ordersummery = "assets/images/order_summery.png";
+  static const String reprocess = "assets/images/reprocess.png";
+  static const String feedback = "assets/images/feedback.png";
 }

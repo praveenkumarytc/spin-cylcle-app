@@ -2,16 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:service/custome_widgets/delivery_type_icon.dart';
 import 'package:service/custome_widgets/discount_container.dart';
 import 'package:service/custome_widgets/whatsaapcontainer.dart';
-import 'package:service/screen/home2.dart';
+import 'package:service/screen/schedule_pickup.dart';
 import 'package:service/utils/image.dart';
 
-class BottomHome extends StatelessWidget {
-  const BottomHome({super.key});
+class Home20 extends StatefulWidget {
+  const Home20({super.key});
 
   @override
+  State<Home20> createState() => _Home20State();
+}
+
+class _Home20State extends State<Home20> {
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
+    return SingleChildScrollView(
         child: Column(
           children: [
             SizedBox(height: 10),
@@ -106,10 +110,12 @@ class BottomHome extends StatelessWidget {
               whataapimage: Image.asset(fit: BoxFit.fill, Images.whataapimage),
             ),
             SizedBox(height: 10),
-
-            Text(
-              "No Orders Yet",
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            Padding(
+              padding: EdgeInsets.only(right: 230),
+              child: Text(
+                "Recent Orders",
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
             ),
             Text(
               "your first laundry order is waiting start accepting",
@@ -120,22 +126,20 @@ class BottomHome extends StatelessWidget {
               style: TextStyle(color: Colors.grey),
             ),
             SizedBox(height: 20),
-            InkWell(
+            GestureDetector(
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Home2()),
+                  MaterialPageRoute(builder: (context) => SchedulePickup()),
                 );
               },
-              child: Text(
-                "Request On Order",
-                style: TextStyle(color: Colors.green, fontSize: 23),
+              child: Whatsaapcontainer(
+                whataapimage: Image.asset(fit: BoxFit.fill, Images.orderid),
               ),
             ),
-            SizedBox(height: 16),
+            SizedBox(height: 20),
           ],
         ),
-      ),
-    );
+      );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:service/bottom_nav_bar/test.dart';
+import 'package:service/profile_screen/order_summery.dart';
 import 'package:service/screen/bottom_nav_details.dart';
 import 'package:service/screen/myorders.dart';
 import 'package:service/screen/notification.dart';
@@ -21,8 +22,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const AccountDetails(),
-      //  Splashscreen(), Notification1(),AccountDetails(),Test1(),
+      home: const OrderSummery(),
+      //Splashscreen(),
+      // , AccountDetails(),
+      //  , Notification1(),,Test1(),  AccountDetails()
     );
   }
 }

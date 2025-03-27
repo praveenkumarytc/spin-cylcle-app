@@ -195,6 +195,7 @@ class _LoginPage1State extends State<LoginPage1> {
                     ),
                   ],
                 ),
+                SizedBox(height: MediaQuery.of(context).size.width * .157),
                 Image.asset(Images.groupfooter),
               ],
             ),

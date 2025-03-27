@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:service/bottom_nav_bar/view_more.dart';
+import 'package:service/profile_screen/view_more.dart';
+
 import 'package:service/utils/colors.dart';
 import 'package:service/utils/image.dart';
 

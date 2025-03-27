@@ -4,7 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:service/bottom_nav_bar/bottom_accounts.dart';
 import 'package:service/bottom_nav_bar/bottom_add.dart';
 import 'package:service/bottom_nav_bar/bottom_home.dart';
-import 'package:service/bottom_nav_bar/bottom_sell.dart';
+import 'package:service/bottom_nav_bar/bottom_order.dart';
 import 'package:service/bottom_nav_bar/bottom_wallet.dart';
 import 'package:service/custome_widgets/profile_details.dart';
 import 'package:service/utils/image.dart';
@@ -17,7 +17,7 @@ class AccountDetails extends StatefulWidget {
 }
 
 class _AccountDetailsState extends State<AccountDetails> {
-  var indexx = 2;
+  var indexx = 0;
   final screens = [
     BottomHome(),
     BottomSell(),
@@ -27,6 +27,7 @@ class _AccountDetailsState extends State<AccountDetails> {
   ];
   final items = [
     Icon(Icons.home, color: Colors.white),
+
     Icon(Icons.sell, color: Colors.white),
     Icon(Icons.add, color: Colors.white),
     Icon(Icons.wallet, color: Colors.white),
@@ -51,10 +52,10 @@ class _AccountDetailsState extends State<AccountDetails> {
         // index: index,
       ),
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Color(0xff6E3667),
-        title: Text("My Account", style: TextStyle(color: Colors.white)),
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: Color(0xff6E3667),
+      //   title: Text("My Account", style: TextStyle(color: Colors.white)),
+      // ),
       body: screens[indexx],
     );
   }

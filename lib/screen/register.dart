@@ -213,6 +213,7 @@ class _RegisterState extends State<Register> {
                     ),
                   ],
                 ),
+                SizedBox(height: MediaQuery.of(context).size.width * .13),
                 Image.asset(Images.groupfooter),
               ],
             ),
